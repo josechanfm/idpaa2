@@ -1,0 +1,12 @@
+create view view_contests_stages as 
+SELECT ccs.*, cs.name_zh, cs.name_en, cs.no_shoot, cs.threat, cs.metal, cs.targets, cs.condition
+FROM `contests_categories_stages` as ccs
+join contests_categories as cc on cc.id=ccs.category_id
+join contests_stages as cs on cs.id=ccs.stage_id
+
+
+
+SELECT ccs.id as category_stage_id,cs.*, cc.name_zh as category_name_zh, cc.name_en as category_name_en, ccs.category_id
+FROM `contests_stages` as cs
+join contests_categories_stages as ccs on ccs.stage_id=cs.id
+join contests_categories as cc on cc.id=ccs.category_id

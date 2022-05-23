@@ -300,7 +300,6 @@ class Form {
 		$script='<script>	$(function(){//Date picker
 	    $("#'.$name.'").daterangepicker({singleDatePicker: true, format:"'.$format.'"'.$view.' 
 	    }) });</script>';
-
 		//$extra['id'] = 'datepicker';
 		return '<div class="form-group">'.form_label($label, $name).'<div class="input-group date"><div class="input-group-addon"><i class="fa fa-calendar"></i></div>'.$this->field_text($name, $value, $extra).'</div></div>'.$script;
 	}
